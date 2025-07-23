@@ -3,19 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Image Optimizer | Advanced Compression</title>
-    <meta name="description" content="An advanced, free online tool to achieve maximum image compression with minimal quality loss. Uses intelligent algorithms for JPEG, PNG, and WEBP.">
+    
+    <title>Image Compressor - Compress JPEG, PNG & WEBP Online</title>
+    <meta name="description" content="Free online image compressor to compress JPEG, PNG, and WEBP files. Reduce image size like TinyPNG or TinyJPG. Compress JPEG to 100kb, 200kb, or 20kb with ease. Giảm dung lượng ảnh, comprimir imagen, kompres foto.">
+    <meta name="keywords" content="Image compressor, Compress image, TinyPNG, TinyJPG, Compress JPEG, JPEG compressor, PNG compressor, Image compressor to 100kb, Compress image to 20kb, Compress JPEG to 200kb, Compress JPEG to 100kb, Giảm dung lượng ảnh, Comprimir imagen, Kompres foto">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- GOOGLE ADSENSE SCRIPT (KEEP THIS) -->
+    <!-- GOOGLE ADSENSE SCRIPT (This remains for Auto Ads) -->
     <!-- This script connects your site to AdSense and enables Auto Ads. -->
-    <!-- Replace "ca-pub-XXXXXXXXXXXXXXXX" with your Google AdSense Publisher ID. -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+    <!-- ↓↓↓ REPLACE THE ID IN THE LINE BELOW WITH YOUR OWN PUBLISHER ID ↓↓↓ -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_PUBLISHER_ID_HERE"
      crossorigin="anonymous"></script>
-    <!-- END GOOGLE ADSENSE SCRIPT -->
+    <!-- ↑↑↑ REPLACE THE ID IN THE LINE ABOVE WITH YOUR OWN PUBLISHER ID ↑↑↑ -->
 
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
@@ -43,20 +46,17 @@
 <body class="bg-slate-50 text-slate-800">
     <div class="container mx-auto max-w-7xl p-4 sm:p-6 lg:p-8">
         <header class="text-center mb-10 animate-fade-in-up">
-            <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold gradient-text">Advanced Image Optimizer</h1>
-            <p class="mt-4 text-base sm:text-lg text-slate-600 max-w-3xl mx-auto" style="animation-delay: 150ms;">Get maximum compression with minimal quality loss using intelligent, goal-oriented optimization.</p>
+            <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold gradient-text">Online Image Compressor</h1>
+            <p class="mt-4 text-base sm:text-lg text-slate-600 max-w-3xl mx-auto" style="animation-delay: 150ms;">A free alternative to TinyPNG and TinyJPG. Compress image files like JPEG, PNG, and WEBP for the web with our advanced tool.</p>
         </header>
 
         <main class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
             <div class="lg:col-span-8 animate-fade-in-up" style="animation-delay: 300ms;">
-                
-                <!-- The Top Banner Ad Container has been removed from here. -->
-
                 <div class="bg-white p-4 sm:p-8 rounded-2xl shadow-lg interactive-card">
                     <div id="upload-container" class="text-center">
                         <div id="upload-box" class="p-6 sm:p-10 rounded-xl cursor-pointer">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-12 sm:h-16 w-12 sm:w-16 text-indigo-300 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5" /></svg>
-                            <p class="mt-4 text-base sm:text-lg font-semibold text-slate-800">Drag & drop your image</p>
+                            <p class="mt-4 text-base sm:text-lg font-semibold text-slate-800">Drag & drop to compress your image</p>
                             <p class="text-slate-500 mt-1">or <span class="font-semibold text-indigo-600">tap to browse</span></p>
                         </div>
                         <input type="file" id="file-input" class="hidden" accept="image/jpeg, image/png, image/webp">
@@ -66,14 +66,14 @@
                             <div id="original-card">
                                 <h3 class="text-lg font-bold mb-3 text-slate-700">Original</h3>
                                 <div class="bg-slate-100 rounded-xl p-2 border aspect-video flex items-center justify-center">
-                                    <img id="original-image" src="#" alt="Original" class="max-w-full max-h-full object-contain rounded-md">
+                                    <img id="original-image" src="#" alt="Original image before compression" class="max-w-full max-h-full object-contain rounded-md">
                                 </div>
                                 <p id="original-size" class="text-center mt-2 text-sm font-medium text-slate-500"></p>
                             </div>
                             <div id="compressed-card" class="relative">
                                 <h3 class="text-lg font-bold mb-3 text-slate-700">Optimized</h3>
                                 <div id="compressed-image-wrapper" class="relative bg-slate-100 rounded-xl p-2 border border-indigo-200 aspect-video flex items-center justify-center">
-                                    <img id="compressed-image" src="#" alt="Compressed" class="max-w-full max-h-full object-contain rounded-md transition-opacity duration-300">
+                                    <img id="compressed-image" src="#" alt="Compressed image after optimization" class="max-w-full max-h-full object-contain rounded-md transition-opacity duration-300">
                                     <div id="recalc-overlay" class="absolute inset-0 bg-white/70 backdrop-blur-sm flex-col rounded-xl items-center justify-center hidden transition-opacity">
                                         <div class="recalc-spinner"></div>
                                         <p id="recalc-text" class="mt-3 text-sm font-medium text-slate-700"></p>
@@ -99,14 +99,10 @@
                             <button id="compress-another-btn" class="w-full sm:w-auto bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold py-3 px-6 rounded-lg transition-colors">Compress Another</button>
                             <button id="download-btn" class="w-full sm:w-auto bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold py-3 px-8 rounded-lg shadow-md hover:shadow-lg">Download File</button>
                         </div>
-
-                        <!-- The Below Results Ad Container has been removed from here. -->
-
                     </div>
-                    <!-- NEW Engaging Loader -->
                     <div id="engaging-loader" class="hidden text-center py-8">
                         <div class="max-w-md mx-auto">
-                            <img id="loader-thumbnail" src="#" alt="Processing thumbnail" class="w-32 h-32 object-contain mx-auto mb-4 rounded-lg bg-slate-100 p-1 border">
+                            <img id="loader-thumbnail" src="#" alt="Thumbnail of image being compressed" class="w-32 h-32 object-contain mx-auto mb-4 rounded-lg bg-slate-100 p-1 border">
                             <h3 id="loader-status-text" class="text-xl font-semibold text-slate-800 mb-3">Analyzing image...</h3>
                             <div class="progress-bg w-full h-2.5 rounded-full overflow-hidden">
                                 <div id="progress-bar" class="progress-bar h-full rounded-full" style="width: 0%;"></div>
@@ -121,18 +117,25 @@
                     <div class="bg-white p-6 rounded-2xl shadow-lg interactive-card">
                         <h3 class="text-xl font-bold mb-4 text-slate-800">How It Works</h3>
                         <ul class="space-y-4 text-slate-600">
-                            <li class="flex items-start"><span class="bg-indigo-100 text-indigo-600 font-bold rounded-full w-6 h-6 text-sm flex items-center justify-center mr-4 mt-0.5 shrink-0">1</span>Upload Your Image.</li>
-                            <li class="flex items-start"><span class="bg-indigo-100 text-indigo-600 font-bold rounded-full w-6 h-6 text-sm flex items-center justify-center mr-4 mt-0.5 shrink-0">2</span>Pick a Preset.</li>
-                            <li class="flex items-start"><span class="bg-indigo-100 text-indigo-600 font-bold rounded-full w-6 h-6 text-sm flex items-center justify-center mr-4 mt-0.5 shrink-0">3</span>Let AI Optimize.</li>
-                            <li class="flex items-start"><span class="bg-indigo-100 text-indigo-600 font-bold rounded-full w-6 h-6 text-sm flex items-center justify-center mr-4 mt-0.5 shrink-0">4</span>Download Your File.</li>
+                            <li class="flex items-start"><span class="bg-indigo-100 text-indigo-600 font-bold rounded-full w-6 h-6 text-sm flex items-center justify-center mr-4 mt-0.5 shrink-0">1</span>Upload to compress image.</li>
+                            <li class="flex items-start"><span class="bg-indigo-100 text-indigo-600 font-bold rounded-full w-6 h-6 text-sm flex items-center justify-center mr-4 mt-0.5 shrink-0">2</span>Choose a preset.</li>
+                            <li class="flex items-start"><span class="bg-indigo-100 text-indigo-600 font-bold rounded-full w-6 h-6 text-sm flex items-center justify-center mr-4 mt-0.5 shrink-0">3</span>Our JPEG & PNG compressor optimizes.</li>
+                            <li class="flex items-start"><span class="bg-indigo-100 text-indigo-600 font-bold rounded-full w-6 h-6 text-sm flex items-center justify-center mr-4 mt-0.5 shrink-0">4</span>Download your smaller file.</li>
                         </ul>
                     </div>
-
-                    <!-- The Sidebar Ad Container has been removed from here. -->
-
                 </div>
             </aside>
         </main>
+
+        <footer class="text-center mt-16 py-8 border-t border-slate-200">
+            <p class="text-sm text-slate-500 max-w-4xl mx-auto">
+                Our free image compressor is the perfect tool to reduce file size. Whether you need a JPEG compressor, a PNG compressor, or want to compress an image to 20kb, 100kb, or 200kb, we've got you covered. This service helps users around the world to <b class="font-medium">comprimir imagen</b>, <b class="font-medium">giảm dung lượng ảnh</b>, and <b class="font-medium">kompres foto</b> quickly and easily.
+            </p>
+            <p class="text-xs text-slate-400 mt-4">
+                &copy; 2024 Your Website Name. All Rights Reserved.
+            </p>
+        </footer>
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/browser-image-compression@2.0.2/dist/browser-image-compression.js" defer></script>
